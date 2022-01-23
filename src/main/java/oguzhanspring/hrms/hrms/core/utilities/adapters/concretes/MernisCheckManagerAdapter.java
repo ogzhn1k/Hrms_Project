@@ -16,20 +16,31 @@ import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
 public class MernisCheckManagerAdapter implements MernisCheckService{
 
 	@Override
-	public Result checkBelongsToTc(Seeker seeker) throws NumberFormatException, RemoteException {
+	public Result checkBelongsToTc(Seeker seeker) {
 		
 		KPSPublicSoapProxy kpsPublicSoapProxy = new KPSPublicSoapProxy();
 		
 		
-		boolean result = kpsPublicSoapProxy.TCKimlikNoDogrula(Long.parseLong(seeker.getTcid()), 
-				                                              seeker.getName().toUpperCase(new Locale("tr","TR")),
-				                                              seeker.getSurname().toUpperCase(new Locale("tr","TR")),
-				                                              seeker.getBirthYear());
-		
-		if(!result) 
-			return new ErrorResult();
-		
+		boolean result;
+		try {
+			result = kpsPublicSoapProxy.TCKimlikNoDogrula(Long.parseLong(seeker.getTcid()), 
+					                                              seeker.getName().toUpperCase(new Locale("tr","TR")),
+					                                              seeker.getSurname().toUpperCase(new Locale("tr","TR")),
+					                                              seeker.getBirthYear());
+			
+			if(!result) 
+				return new ErrorResult();
+						
+			
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new SuccessResult();
+
 		
 	}
 

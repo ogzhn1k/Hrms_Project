@@ -2,9 +2,6 @@ package oguzhanspring.hrms.hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-/*import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;*/
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -34,14 +31,4 @@ public class Seeker extends User{
 	
 	@Column(name = "birth_year")
 	private int birthYear;
-	
-	/*@Column(name = "e_mail")
-	private String eMail;
-	
-	@Column(name = "password")
-	private String password;
-	
-	@Column(name = "password_again")
-	private String passwordAgain;*/
-
 }

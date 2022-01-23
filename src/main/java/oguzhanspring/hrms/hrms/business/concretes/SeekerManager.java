@@ -41,7 +41,7 @@ public class SeekerManager implements SeekerService{
 	@Override
 	public Result isEmailExist(String email) {
 		
-		if(this.seekerDao.findByEmail(email) != null) {
+		if(this.seekerDao.getByEmail(email) != null) {
 			return new ErrorResult();
 		}
 
@@ -52,7 +52,7 @@ public class SeekerManager implements SeekerService{
 	@Override
 	public Result isTcIdExist(String tcid) {
 		
-		if(this.seekerDao.findByTcid(tcid) != null) {
+		if(this.seekerDao.getByTcid(tcid) != null) {
 			return new ErrorResult();
 		}
 		
@@ -67,9 +67,9 @@ public class SeekerManager implements SeekerService{
 		}
 		
 		
-		if(!this.mernisCheckService.checkBelongsToTc(seeker).isSuccess()) {
+		/*if(!this.mernisCheckService.checkBelongsToTc(seeker).isSuccess()) {
 			return new ErrorResult("Mernis doğrulaması başarısız");
-		}
+		}*/
 		
 		this.seekerDao.saveAndFlush(seeker);
 		return new SuccessResult("İş arayan kişi sisteme eklenmiştir");

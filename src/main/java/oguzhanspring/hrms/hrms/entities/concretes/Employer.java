@@ -1,12 +1,19 @@
 package oguzhanspring.hrms.hrms.entities.concretes;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 //import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,12 +27,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "user_id")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class Employer extends User{
-	
-	/*@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "employer_id")
-	private int employerId;*/
 	
 	@Column(name = "company_name")
 	private String companyName;
@@ -33,16 +36,10 @@ public class Employer extends User{
 	@Column(name = "web_site")
 	private String webSite;
 	
-	/*@Column(name = "web_domain_mail")
-	private String webDomainMail;*/
-	
 	@Column(name = "tel_number")
 	private String telNumber;
 	
-	/*@Column(name = "password")
-	private String password;
-	
-	@Column(name = "password_again")
-	private String passwordAgain;*/
+	@OneToMany(mappedBy = "employer",orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<JobAdvertisement> jobAdvertisements;
 
 }

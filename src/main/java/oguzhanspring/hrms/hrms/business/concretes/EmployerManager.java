@@ -39,7 +39,7 @@ public class EmployerManager implements EmployerService{
 	
 	public Result isEmailExist(String eMail) {
 		
-		if(this.employerDao.findByEmail(eMail) != null) {
+		if(this.employerDao.getByEmail(eMail) != null) {
 			return new ErrorResult();
 		}
 		
