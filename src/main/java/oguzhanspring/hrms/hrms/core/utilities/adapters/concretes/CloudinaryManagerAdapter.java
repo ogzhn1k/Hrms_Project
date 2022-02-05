@@ -27,11 +27,11 @@ public class CloudinaryManagerAdapter implements CloudinaryService{
 		
 		Map<String, String> valuesMap = new HashMap<>();
 		
-		valuesMap.put( "cloud_name", "ogzhn1k");
+		valuesMap.put( "cloud_name", "*****");
 		
-		valuesMap.put("api_key", "118336555788418");
+		valuesMap.put("api_key", "*****");
 		
-		valuesMap.put("api_secret", "1p3Vp4l8Qwh94cbkp5g8c4jkEIo");
+		valuesMap.put("api_secret", "****");
 		
 		cloudinary = new Cloudinary(valuesMap);
 	}
