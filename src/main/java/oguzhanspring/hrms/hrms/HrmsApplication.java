@@ -3,6 +3,7 @@ package oguzhanspring.hrms.hrms;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -24,5 +25,5 @@ public class HrmsApplication {
           .apis(RequestHandlerSelectors.basePackage("oguzhanspring.hrms.hrms"))              
           .build();                                           
     }
-
+	
 }

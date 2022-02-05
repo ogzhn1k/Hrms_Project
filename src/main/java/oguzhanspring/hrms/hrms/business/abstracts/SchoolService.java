@@ -2,14 +2,15 @@ package oguzhanspring.hrms.hrms.business.abstracts;
 
 import java.util.List;
 
+
 import oguzhanspring.hrms.hrms.core.utilities.results.DataResult;
 import oguzhanspring.hrms.hrms.core.utilities.results.Result;
-import oguzhanspring.hrms.hrms.entities.concretes.Employer;
+import oguzhanspring.hrms.hrms.entities.concretes.School;
 
-public interface EmployerService {
+public interface SchoolService {
 	
-	DataResult<List<Employer>> getAllEmployers();
+	DataResult<List<School>> getAllSchools();
 	
-	Result addEmployer(Employer employer);
+	Result addSchool(School school);
 	
 }

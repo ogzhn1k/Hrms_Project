@@ -5,17 +5,21 @@ import java.util.List;
 import oguzhanspring.hrms.hrms.core.utilities.results.DataResult;
 import oguzhanspring.hrms.hrms.core.utilities.results.Result;
 import oguzhanspring.hrms.hrms.entities.concretes.JobAdvertisement;
+import oguzhanspring.hrms.hrms.entities.dtos.JobActiveDto;
+import oguzhanspring.hrms.hrms.entities.dtos.JobAdDto;
 
 public interface JobAdvertisementService {
 	
 	DataResult<List<JobAdvertisement>> getAllAdvertisements();
 	
-	Result addJobAdvertisement(JobAdvertisement jobAdvertisement);
+	Result addJobAdvertisement(JobAdDto jobAdDto);
 	
-	DataResult<List<JobAdvertisement>> findByIsActiveIs(boolean isActive);
+	DataResult<List<JobActiveDto>> findAllByIsActive(boolean isActive);
 	
-	DataResult<List<JobAdvertisement>> findByIsActiveTrueOrderByLastApplicationAsc();
+	DataResult<List<JobActiveDto>> findByIsActiveTrueOrderByLastApplicationAsc();
 	
-	DataResult<List<JobAdvertisement>> getByIsActiveAndEmployer_CompanyName(boolean isActive,String companyName);
+	DataResult<List<JobActiveDto>> getByIsActiveAndEmployer_CompanyName(boolean isActive,String companyName);
+	
+	void closeJobAdvertisement(int employer_id);
 
 }

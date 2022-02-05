@@ -4,12 +4,11 @@ import java.util.List;
 
 import oguzhanspring.hrms.hrms.core.utilities.results.DataResult;
 import oguzhanspring.hrms.hrms.core.utilities.results.Result;
-import oguzhanspring.hrms.hrms.entities.concretes.Employer;
+import oguzhanspring.hrms.hrms.entities.concretes.Resume;
 
-public interface EmployerService {
+public interface ResumeService {
 	
-	DataResult<List<Employer>> getAllEmployers();
+	DataResult<List<Resume>> getAllResumes();
 	
-	Result addEmployer(Employer employer);
-	
+	Result addResume(Resume resume);
 }

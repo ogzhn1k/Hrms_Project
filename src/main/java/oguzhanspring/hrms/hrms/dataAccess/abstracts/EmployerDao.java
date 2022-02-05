@@ -4,7 +4,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import oguzhanspring.hrms.hrms.entities.concretes.Employer;
 
-public interface EmployerDao extends JpaRepository<Employer, Integer>{
-	
+public interface EmployerDao extends JpaRepository<Employer, Integer> {
+
 	Employer getByEmail(String email);
+
+	Employer getByUserId(int userId);
+
+	Employer getByCompanyName(String companyName);
+
 }

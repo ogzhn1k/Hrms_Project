@@ -9,4 +9,5 @@ import oguzhanspring.hrms.hrms.entities.concretes.Job;
 public interface JobDao extends JpaRepository<Job, Integer>{
 	
 	List<Job> findByJobName(String jobName);
+	Job getByJobName(String jobName);
 }

@@ -4,12 +4,12 @@ import java.util.List;
 
 import oguzhanspring.hrms.hrms.core.utilities.results.DataResult;
 import oguzhanspring.hrms.hrms.core.utilities.results.Result;
-import oguzhanspring.hrms.hrms.entities.concretes.Employer;
+import oguzhanspring.hrms.hrms.entities.concretes.Language;
 
-public interface EmployerService {
+public interface LanguageService {
 	
-	DataResult<List<Employer>> getAllEmployers();
+	DataResult<List<Language>> getAllLangs();
 	
-	Result addEmployer(Employer employer);
-	
+	Result addLanguage(Language language);
+
 }
